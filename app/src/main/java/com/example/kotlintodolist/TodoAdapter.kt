@@ -21,6 +21,21 @@ class TodoAdapter (private val todos : MutableList<ToDo>) : RecyclerView.Adapter
         return TodoViewHolder(binding)
     }
 
+//    function to add todos
+    fun addTodo(todo: ToDo) {
+        todos.add(todo)
+        notifyItemInserted(todos.size - 1)
+    }
+
+//    function to removeTodo
+fun deleteDoneTodos() {
+    todos.removeAll { todo ->
+        todo.isChecked
+    }
+    notifyDataSetChanged()
+}
+
+    // to change the flag when checked or uncheck
     private fun toggleStrikeThrough(tvTodoTitle : TextView, isChecked : Boolean){
         if (isChecked){
             tvTodoTitle.paintFlags = tvTodoTitle.paintFlags or STRIKE_THRU_TEXT_FLAG

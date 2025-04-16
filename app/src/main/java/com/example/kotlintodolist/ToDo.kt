@@ -1,6 +1,6 @@
 package com.example.kotlintodolist
 
-class ToDo {
-    val title : String? = null
+class ToDo(
+    val title : String? ,
     var isChecked: Boolean = false
-}
+)
