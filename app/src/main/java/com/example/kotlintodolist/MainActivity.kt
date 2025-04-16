@@ -1,6 +1,8 @@
 package com.example.kotlintodolist
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlintodolist.databinding.ActivityMainBinding
@@ -29,6 +31,9 @@ class MainActivity : AppCompatActivity() {
                 val todo = ToDo(todoTitle)
                 todoAdapter.addTodo(todo)
                 binding.edTodoTitle.text.clear()
+            }else{
+                println("I got this: $todoTitle")
+                Log.i(TAG, "Hello World")
             }
         }
 
